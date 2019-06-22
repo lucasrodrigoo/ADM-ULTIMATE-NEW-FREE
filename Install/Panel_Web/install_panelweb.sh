@@ -54,6 +54,8 @@ echo -e "\033[1;36mINSTALANDO APACHE2\033[0m"
 echo ""
 echo -e "\033[1;33mESPERE..."
 apt-get install apache2 -y > /dev/null 2>&1
+sed -i "s;Listen 80;Listen 81;g" /etc/apache2/ports.conf
+service apache2 restart > /dev/null 2>&1
 apt-get install cron curl unzip -y > /dev/null 2>&1
 echo ""
 echo -e "\033[1;36mINSTALANDO DEPENDENCIAS\033[0m"
@@ -187,6 +189,8 @@ echo -e "\033[1;36mINSTALANDO O APACHE2\033[0m"
 echo ""
 echo -e "\033[1;33mESPERE..."
 apt-get install apache2 -y > /dev/null 2>&1
+sed -i "s;Listen 80;Listen 81;g" /etc/apache2/ports.conf
+service apache2 restart > /dev/null 2>&1
 apt-get install cron curl unzip -y > /dev/null 2>&1
 echo ""
 echo -e "\033[1;36mINSTALANDO DEPENDENCIAS\033[0m"
@@ -304,6 +308,9 @@ sudo apt-get autoclean
 sudo rm -rf /var/www/html
 mkdir /var/www/html
 touch /var/www/html/index.html
+apt-get install apache2  > /dev/null 2>&1
+sed -i "s;Listen 80;Listen 81;g" /etc/apache2/ports.conf
+service apache2 restart > /dev/null 2>&1
 echo -e "$barra"
 echo -e "\033[1;36mPANEL SSHPLUS ELIMINADO CON EXITO \033[1;32m[!OK]"
 echo -e "$barra"
