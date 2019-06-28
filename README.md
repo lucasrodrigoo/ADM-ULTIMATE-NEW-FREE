@@ -11,6 +11,7 @@
 
 * Un sistema operativo basado en Linux. Recomendamos Ubuntu 14.04
 * Soporta Ubuntu 16 y 18 pero su mejor estabilidad es Ubuntu 14.04
+* Soporta Debian 7 - 8 y 9 pero su mejor estabilidad es Debian 7
 * Se recomienda usar una distro nueva o formatiada.
 
 ## Installation
