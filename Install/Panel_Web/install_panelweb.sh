@@ -94,7 +94,7 @@ echo -ne "\033[1;33mEnter, Para Continuar!\033[1;37m"; read
 apt-get install phpmyadmin -y
 php5enmod mcrypt
 service apache2 restart
-ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
+ln -s /usr/share/phpmyadmin /var/www/painel/phpmyadmin
 apt-get install libssh2-1-dev libssh2-php -y > /dev/null 2>&1
 apt-get install php5-curl > /dev/null 2>&1
 service apache2 restart
@@ -112,16 +112,16 @@ echo ""
 echo -e "\033[1;33mAGUARDE..."
 echo ""
 wget -O /var/www/index.html https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/Panel_Web/index.html &> /dev/null
-mkdir /var/www/html
-cd /var/www/html
+mkdir /var/www/painel
+cd /var/www/painel
 wget https://www.dropbox.com/s/hap27l4buda652s/painel10.zip > /dev/null 2>&1
 sleep 1
 unzip painel10.zip > /dev/null 2>&1
 rm -rf painel10.zip index.html > /dev/null 2>&1
 service apache2 restart
 sleep 1
-if [[ -e "/var/www/html/pages/system/pass.php" ]]; then
-sed -i "s;suasenha;$senha;g" /var/www/html/pages/system/pass.php > /dev/null 2>&1
+if [[ -e "/var/www/painel/pages/system/pass.php" ]]; then
+sed -i "s;suasenha;$senha;g" /var/www/painel/pages/system/pass.php > /dev/null 2>&1
 fi
 sleep 1
 cd
@@ -136,22 +136,22 @@ else
     sleep 2
     exit
 fi
-echo '* * * * * root /usr/bin/php /var/www/html/pages/system/cron.php' >> /etc/crontab
-echo '* * * * * root /usr/bin/php /var/www/html/pages/system/cron.ssh.php ' >> /etc/crontab
-echo '* * * * * root /usr/bin/php /var/www/html/pages/system/cron.sms.php' >> /etc/crontab
-echo '* * * * * root /usr/bin/php /var/www/html/pages/system/cron.online.ssh.php' >> /etc/crontab
-echo '10 * * * * root /usr/bin/php /var/www/html/pages/system/cron.servidor.php' >> /etc/crontab
+echo '* * * * * root /usr/bin/php /var/www/painel/pages/system/cron.php' >> /etc/crontab
+echo '* * * * * root /usr/bin/php /var/www/painel/pages/system/cron.ssh.php ' >> /etc/crontab
+echo '* * * * * root /usr/bin/php /var/www/painel/pages/system/cron.sms.php' >> /etc/crontab
+echo '* * * * * root /usr/bin/php /var/www/painel/pages/system/cron.online.ssh.php' >> /etc/crontab
+echo '10 * * * * root /usr/bin/php /var/www/painel/pages/system/cron.servidor.php' >> /etc/crontab
 /etc/init.d/cron reload > /dev/null 2>&1
 /etc/init.d/cron restart > /dev/null 2>&1
-chmod 777 /var/www/html/admin/pages/servidor/ovpn
-chmod 777 /var/www/html/admin/pages/download
-chmod 777 /var/www/html/admin/pages/faturas/comprovantes
+chmod 777 /var/www/painel/admin/pages/servidor/ovpn
+chmod 777 /var/www/painel/admin/pages/download
+chmod 777 /var/www/painel/admin/pages/faturas/comprovantes
 service apache2 restart
 sleep 1
 clear
 echo -e "\033[1;32mPANEL INSTALADO CON EXITO!"
 echo ""
-echo -e "\033[1;36mLINK AREA DE ADMIN:\033[1;37m $IP:81/html/admin\033[0m"
+echo -e "\033[1;36mLINK AREA DE ADMIN:\033[1;37m $IP:81/painel/admin\033[0m"
 echo -e "\033[1;36mLINK AREA DE REVENDEDOR: \033[1;37m $IP:81/html\033[0m"
 echo -e "\033[1;36mUSUARIO\033[1;37m admin\033[0m"
 echo -e "\033[1;36mCONTRASENA\033[1;37m admin\033[0m"
@@ -229,7 +229,7 @@ echo -ne "\033[1;33mEnter, Para Continuar!\033[1;37m"; read
 apt-get install phpmyadmin -y
 php5enmod mcrypt
 service apache2 restart
-ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
+ln -s /usr/share/phpmyadmin /var/www/painel/phpmyadmin
 apt-get install libssh2-1-dev libssh2-php -y > /dev/null 2>&1
 apt-get install php5-curl > /dev/null 2>&1
 service apache2 restart
@@ -247,16 +247,16 @@ echo ""
 echo -e "\033[1;33mESPERE..."
 echo ""
 wget -O /var/www/index.html https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/Panel_Web/index.html &> /dev/null
-mkdir /var/www/html
-cd /var/www/html
+mkdir /var/www/painel
+cd /var/www/painel
 wget https://www.dropbox.com/s/p3ojpe2r3uhg9tx/PAINELWEB1.zip > /dev/null 2>&1
 sleep 1
 unzip PAINELWEB1.zip > /dev/null 2>&1
 rm -rf PAINELWEB1.zip index.html > /dev/null 2>&1
 service apache2 restart
 sleep 1
-if [[ -e "/var/www/html/pages/system/pass.php" ]]; then
-sed -i "s;suasenha;$senha;g" /var/www/html/pages/system/pass.php > /dev/null 2>&1
+if [[ -e "/var/www/painel/pages/system/pass.php" ]]; then
+sed -i "s;suasenha;$senha;g" /var/www/painel/pages/system/pass.php > /dev/null 2>&1
 fi
 sleep 1
 cd
@@ -271,22 +271,22 @@ else
     sleep 2
     exit
 fi
-echo '* * * * * root /usr/bin/php /var/www/html/pages/system/cron.php' >> /etc/crontab
-echo '* * * * * root /usr/bin/php /var/www/html/pages/system/cron.ssh.php ' >> /etc/crontab
-echo '* * * * * root /usr/bin/php /var/www/html/pages/system/cron.sms.php' >> /etc/crontab
-echo '* * * * * root /usr/bin/php /var/www/html/pages/system/cron.online.ssh.php' >> /etc/crontab
-echo '10 * * * * root /usr/bin/php /var/www/html/pages/system/cron.servidor.php' >> /etc/crontab
+echo '* * * * * root /usr/bin/php /var/www/painel/pages/system/cron.php' >> /etc/crontab
+echo '* * * * * root /usr/bin/php /var/www/painel/pages/system/cron.ssh.php ' >> /etc/crontab
+echo '* * * * * root /usr/bin/php /var/www/painel/pages/system/cron.sms.php' >> /etc/crontab
+echo '* * * * * root /usr/bin/php /var/www/painel/pages/system/cron.online.ssh.php' >> /etc/crontab
+echo '10 * * * * root /usr/bin/php /var/www/painel/pages/system/cron.servidor.php' >> /etc/crontab
 /etc/init.d/cron reload > /dev/null 2>&1
 /etc/init.d/cron restart > /dev/null 2>&1
-chmod 777 /var/www/html/admin/pages/servidor/ovpn
-chmod 777 /var/www/html/admin/pages/download
-chmod 777 /var/www/html/admin/pages/faturas/comprovantes
+chmod 777 /var/www/painel/admin/pages/servidor/ovpn
+chmod 777 /var/www/painel/admin/pages/download
+chmod 777 /var/www/painel/admin/pages/faturas/comprovantes
 service apache2 restart
 sleep 1
 clear
 echo -e "\033[1;32mPAINEL INSTALADO CON EXITO!"
 echo ""
-echo -e "\033[1;36mLINK AREA ADMIN:\033[1;37m $IP:81/html/admin\033[0m"
+echo -e "\033[1;36mLINK AREA ADMIN:\033[1;37m $IP:81/painel/admin\033[0m"
 echo -e "\033[1;36mLINK AREA REVENDA: \033[1;37m $IP:81/html\033[0m"
 echo -e "\033[1;36mUSUARIO\033[1;37m admin\033[0m"
 echo -e "\033[1;36mCONTRASENA\033[1;37m admin\033[0m"
@@ -305,9 +305,9 @@ sudo apt-get purge mysql-server mysql-client mysql-common mysql-server-core-* my
 sudo rm -rf /etc/mysql /var/lib/mysql
 sudo apt-get autoremove
 sudo apt-get autoclean
-sudo rm -rf /var/www/html
-mkdir /var/www/html
-touch /var/www/html/index.html
+sudo rm -rf /var/www/painel
+mkdir /var/www/painel
+touch /var/www/painel/index.html
 apt-get install apache2  > /dev/null 2>&1
 sed -i "s;Listen 80;Listen 81;g" /etc/apache2/ports.conf
 service apache2 restart > /dev/null 2>&1
